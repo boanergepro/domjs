@@ -1,9 +1,9 @@
 # DOMJS
 
-Esta es una libreria creada para la manipulacion del Document Objet Model.
+Esta es una libreria creada para la manipulación del DOM (Document Objet Model).
 
 
-### Anadirlo a nuestro documento: 
+### Añadirlo a nuestro documento: 
 
 ```javascript
 <script type="text/javascript" src="domjs.js"></script>
@@ -12,13 +12,14 @@ Esta es una libreria creada para la manipulacion del Document Objet Model.
 
 1. **_createNode(argumentos)**
 	
-	Este metodo sirve para crear un nodo en nuestro alblo DOM. Dicho metodo recibe tres parametros.
+	Este metodo sirve para crear un nodo en nuestro arbol DOM. Dicho metodo recibe tres parametros.
 
 	1.1 ```typeElement``` : Este debe ser de tipo ```string``` y debe corresponder al nombre de la etiqueta del nodo que queremos crear.
 	**Ejemplo** ```div``` para crear un nodo con la etiqueta ```<div>```.
 
 	1.2 ```textValue``` : Este debe ser de tipo ```string``` y debe corresponder al contenido que queremos que tenga nuestro nodo.
 	**Ejemplo** Si le pasamos un ```string``` vacio ```""``` el elemento se creara in ningún texto.
+	
 	1.3 ```idParentElement``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del padre del nodo que queremos eliminar.  
 
 2. **_removeNode(argumentos)**
