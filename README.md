@@ -14,12 +14,12 @@ Esta es una libreria creada para la manipulacion del Document Objet Model.
 	
 	Este metodo sirve para crear un nodo en nuestro alblo DOM. Dicho metodo recibe tres parametros.
 
-	* ```typeElement``` : Este debe ser de tipo ```string``` y debe corresponder al nombre de la etiqueta del nodo que queremos crear.
+	1.1 ```typeElement``` : Este debe ser de tipo ```string``` y debe corresponder al nombre de la etiqueta del nodo que queremos crear.
 	**Ejemplo** ```div``` para crear un nodo con la etiqueta ```<div>```.
 
-	* ```textValue``` : Este debe ser de tipo ```string``` y debe corresponder al contenido que queremos que tenga nuestro nodo.
+	1.2 ```textValue``` : Este debe ser de tipo ```string``` y debe corresponder al contenido que queremos que tenga nuestro nodo.
 	**Ejemplo** Si le pasamos un ```string``` vacio ```""``` el elemento se creara in ningún texto.
-	* ```idParentElement``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del padre del nodo que queremos eliminar.  
+	1.3 ```idParentElement``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del padre del nodo que queremos eliminar.  
 
 2. **_removeNode(argumentos)**
 
