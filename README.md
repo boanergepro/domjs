@@ -29,11 +29,11 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	**_Javascript_**
 
 	```javascript
-	_domjs.createNode("div", "", "nodoPadre");
+	domjs._createNode("div", "", "nodoPadre");
 
 	```
 	**_html_**
-	
+
 	```html
 	<div id="nodoPadre">
 		
@@ -60,6 +60,39 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 2. **_removeNode(argumentos)**
 
 	Este metodo sirve para eliminar un nodo del DOM. Dicho metodo solo recive un parametro, el cual debe ser de tipo ```string``` y corresponder con el atributo ```id``` del nodo que queremos eliminar.
+
+	**Ejemplo**
+
+	**_html_**
+
+	```html
+	<div id="nodoPadre">
+		
+		<!--
+			El nodo con el id "nodoHijo" es el que necesitamos eliminar.
+		-->
+		<div id="nodoHijo"></div>
+
+	</div>
+	```
+
+	```javascript
+	domjs._removeNode("nodoHijo");
+
+	```
+
+	**Asi quedaria nuestro codigo ```html```**
+
+	```html
+	<div id="nodoPadre">
+		
+		<!--
+		El <div> ha sido eliminado.
+		-->
+
+	</div>
+	```
+
 
 ### Como emplear la libreria en el codigo:
 
