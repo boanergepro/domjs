@@ -26,11 +26,14 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	
 	**Ejemplo**
 	
+	**_Javascript_**
+
 	```javascript
-	_createNode("div", "", "nodoPadre");
+	_domjs.createNode("div", "", "nodoPadre");
 
 	```
-
+	**_html_**
+	
 	```html
 	<div id="nodoPadre">
 		
