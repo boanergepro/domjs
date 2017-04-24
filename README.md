@@ -8,6 +8,18 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 ```html
 <script type="text/javascript" src="domjs.js"></script>
 ```
+### Como emplear la libreria en el codigo:
+
+1. **Ejemplo**
+
+	Se debe usar ```domjs``` para usar el objeto, seguido se debe colocar un ```.``` y el nombre del metodo que se desea usar con sus argumentos.
+
+**_Javascript_**
+
+```javascript
+	domjs.nombreMetodo(argumentos)
+```
+
 ### El Objeto ```domjs``` ofrece una serie de metodos para manipular el DOM.
 
 1. **_createNode(argumentos)**
@@ -76,6 +88,8 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	</div>
 	```
 
+	**_Javascript_**
+
 	```javascript
 	domjs._removeNode("nodoHijo");
 
@@ -94,12 +108,3 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	```
 
 
-### Como emplear la libreria en el codigo:
-
-1. **Ejemplo**
-
-	Se debe usar ```domjs``` para usar el objeto, seguido se debe colocar un ```.``` y el nombre del metodo que se desea usar con sus argumentos.
-
-```javascript
-	domjs.nombreFuncion(argumentos)
-```
