@@ -2,8 +2,7 @@
 
 Esta es una libreria creada para la manipulación del DOM (Document Objet Model).
 
-
-### Añadirlo a nuestro documento: 
+### Añadirlo a nuestro documento:
 
 ```html
 <script type="text/javascript" src="domjs.js"></script>
