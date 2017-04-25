@@ -106,5 +106,22 @@ const domjs = {
 			alert(`El atributo ${attribute} con el valor ${valueAttribute} fue añadido al nodo.`);
 
 		}
+	},
+
+	//Metodo eliminar atributos de un nodo.
+
+	_removeAttributeNode : function(idElement, attribute){
+
+		if (idElement && attribute == undefined) {
+			alert('Algún parametro no ha sido proporcionado al metodo _removeAttributeNode.');
+		}
+		else if(document.getElementById(idElement) == null){
+			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
+		}
+		else if (typeof(idElement, attribute) == 'string') {
+			let element = document.getElementById(idElement);
+			element.removeAttribute(attribute);
+			alert(`El atributo ${attribute} fue eliminado del nodo del DOM.`);
+		}
 	}
 }
