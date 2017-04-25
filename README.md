@@ -105,5 +105,33 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	</div>
 	```
+3. **_searchClass(argumentos)**
 
+	Este metodo sirve para verificar si un nodo del DOM posee o no una clase.
+	Recibe dos parametros.
+
+	3.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo del que queremos verificar la clase.
+
+	3.2 ```classSearch``` : Este debe ser de tipo ```string``` y debe corresponder con el nombre de la clase que queremos ver si tiene nuestro nodo con el atributo ```id``` que pasamos como primer parametro a nuestro metodo ```_searchClass()```.
+
+	**Ejemplo**
+
+	**_Javascript_**
+
+	```javascript
+
+	domjs._searchClass("contenedor", "style");
+
+	```
+	**_html_**
+
+	```html
+	<div id="contenedor" class="style color">
+		
+		<!--
+		Ya que el div si tiene una clase llamada 'style' entonces el metodo lo notificara con un ```alert()```.
+		-->
+
+	</div>
+	```
 
