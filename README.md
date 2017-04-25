@@ -205,3 +205,41 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	</div>
 	```
+
+6. **_removeAttributeNode(argumentos)**
+	
+	Este metodo sirve para remover un atributo de algun nodo del DOM. Recibe dos parametros.
+
+	6.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo al que le queremos remover el atributo.
+
+	6.2 ```attribute``` : Este debe ser de tipo ```string``` y debe corresponder al valor del atributo que queremos eliminar de nuestro nodo.
+
+	**Ejemplo**
+
+	**_Javascript_**
+
+	```javascript
+
+	domjs._removeAttributeNode("contenedor", "class");
+
+	```
+
+	**_html_**
+
+	```html
+	<div id="contenedor" class="style">
+		
+
+	</div>
+	```
+
+	**Asi quedaria nuestro codigo ```html```**
+
+	```html
+	<!--Ahora se elimino el atributo class con el valor 'style'-->
+	<div id="contenedor">
+		
+		<!--Se notificara por un ```alert()```el atributo que fue removido.-->
+
+	</div>
+	```
