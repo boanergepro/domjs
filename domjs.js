@@ -87,5 +87,24 @@ const domjs = {
 				alert(`El nodo si tiene un atributo '${attributeSee}' y su valor es  '${attribute}'`);
 			}
 		}
+	},
+
+	//Metodo agregar atributos a un nodo.
+
+	_addAttributeNode : function(idElement, attribute, valueAttribute){
+
+		if (idElement && attribute && valueAttribute == undefined) {
+			alert('Algún parametro no ha sido proporcionado al metodo _addAttributeNode.');
+		}
+		else if(document.getElementById(idElement) == null){
+			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
+		}
+		else if (typeof(idElement, attribute, valueAttribute) == 'string') {
+
+			let element = document.getElementById(idElement);
+			element.setAttribute(attribute, valueAttribute);
+			alert(`El atributo ${attribute} con el valor ${valueAttribute} fue añadido al nodo.`);
+
+		}
 	}
 }
