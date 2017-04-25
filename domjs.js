@@ -49,6 +49,9 @@ const domjs = {
 		if(idElement && classSearch == undefined){
 			alert('Algún parametro no ha sido proporcionado al metodo _searchClass.');
 		}
+		else if(document.getElementById(idElement) == null){
+			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
+		}
 		else if(typeof(idElement, classSearch) == 'string'){
 			let element = document.getElementById(idElement); 
 			let exists = element.classList.contains(classSearch);
