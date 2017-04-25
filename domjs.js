@@ -61,4 +61,28 @@ const domjs = {
 			}
 		}
 	},
+
+	//Metodo para ver el valor de algun atributo del nodo.
+
+	_seeAttributeNode: function(idElement, attributeSee){
+
+		if(idElement && attributeSee == undefined){
+			alert('Algún parametro no ha sido proporcionado al metodo _seeAttributeNode.');
+		}
+		else if(document.getElementById(idElement) == null){
+			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
+		}
+		else if(typeof(idElement,attributeSee) == 'string'){
+			let element = document.getElementById(idElement);
+
+			let attribute = element.getAttribute(attributeSee);
+
+			if(attribute == null){
+				alert(`El nodo no tiene un atributo '${attributeSee}'`)
+			}
+			else{
+				alert(`El nodo si tiene un atributo '${attributeSee}' y su valor es  '${attribute}'`);
+			}
+		}
+	}
 }
