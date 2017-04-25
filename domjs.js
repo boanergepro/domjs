@@ -6,7 +6,7 @@
 
 const domjs = {
 
-	//Metodos
+	//Metodo crear nodo
 
 	_createNode : function(typeElement, textValue, idParentElement) {
 	
@@ -24,6 +24,8 @@ const domjs = {
 			parent.appendChild(element);
 		}
 	},
+
+	//Metodo eliminar nodo
 
 	_removeNode : function(idElement){
 
