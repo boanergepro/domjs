@@ -143,9 +143,9 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	4.2 ```attributeSee``` : Este debe ser de tipo ```string``` y debe corresponder al nombre del atributo que queremos verificar.
 
-	 **Ejemplo**
+	**Ejemplo**
 
-	 **_Javascript_**
+	**_Javascript_**
 
 	```javascript
 
@@ -161,6 +161,47 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 		<!--
 		Retornara ```"style color"``` ya que el atributo class tiene este valor en el nodo que estamos consultando```alert()```.
 		-->
+
+	</div>
+	```
+
+5. **_addAttributeNode(argumentos)**
+
+	Este metodo sirve para agregar un atributo a un nodo del DOM. Este recibe tres parametros.
+
+	5.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo al que queremos agregar el atributo.
+
+	5.2 ```attribute``` : Este debe ser de tipo ```string``` y debe tener un nombre valido de un atributo para los nodos.
+
+	5.3 ```valueAttribute``` : Este debe ser de tipo ```string``` y debe corresponder al valor del atributo que queremos agregar al nodo del DOM.
+
+	**Ejemplo**
+
+	**_Javascript_**
+
+	```javascript
+
+	domjs._addAttributeNode("contenedor", "class", "style");
+
+	```
+
+	**_html_**
+
+	```html
+	<div id="contenedor">
+		
+
+	</div>
+	```
+
+	**Asi quedaria nuestro codigo ```html```**
+
+	```html
+	<!--Ahora se agrego el atributo class con el valor 'style'-->
+	<div id="contenedor" class="style">
+		
+		<!--Se notificara por un ```alert()``` del atributo y el valor de 
+		dicho atributo que se agrego.-->
 
 	</div>
 	```
