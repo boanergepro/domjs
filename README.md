@@ -135,3 +135,32 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	</div>
 	```
 
+4. **_seeAttributeNode(argumentos)**
+
+	Este metodo sirve para verificar un atributo de un nodo. Recibe dos parametros.
+
+	4.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo del que queremos verificar el atributo.
+
+	4.2 ```attributeSee``` : Este debe ser de tipo ```string``` y debe corresponder al nombre del atributo que queremos verificar.
+
+	 **Ejemplo**
+
+	 **_Javascript_**
+
+	```javascript
+
+	domjs._seeAttributeNode("contenedor", "class");
+
+	```
+
+	**_html_**
+
+	```html
+	<div id="contenedor" class="style color">
+		
+		<!--
+		Retornara ```"style color"``` ya que el atributo class tiene este valor en el nodo que estamos consultando```alert()```.
+		-->
+
+	</div>
+	```
