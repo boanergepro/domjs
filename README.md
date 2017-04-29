@@ -23,7 +23,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 1. **createNode(argumentos)**
 	
-	Este metodo sirve para crear un nodo en nuestro arbol DOM. Dicho metodo recibe tres parametros.
+	Este metodo sirve para crear un nodo en nuestro arbol DOM. Cabe mencionar que este permite ser usado de dos formas, una para crear un nodo hijo de otro, como por ejemplo un ```<li>``` dentro de un ```<ul>```, y la otra forma es para crear el nodo directamente detro del body. Dicho metodo puede recibir los siguientes parametros.
 
 	1.1 ```typeElement``` : Este debe ser de tipo ```string``` y debe corresponder al nombre de la etiqueta del nodo que queremos crear.
 	
@@ -35,7 +35,9 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	
 	1.3 ```idParentElement``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del padre del nodo que queremos eliminar.  
 	
-	**Ejemplo**
+	**Ejemplo de la creación de un nodo hijo de otro.**
+
+	Para crear un nodo hijo de otro, como lo seria el caso de crear un elemento ```<div>``` dentro de otro ```<div>``` tendriamos que pasarle los tres parametros al metodo.
 	
 	**_Javascript_**
 
@@ -67,6 +69,41 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	</div>
 	```
+
+	**Ejemplo de la creación de un nodo hijo de el nodo ```<body>``` directamente.**
+	
+	Para crear un nodo directamente dentro del nodo ```<body>``` solo es necesario que le pasemos los dos primeros parametros a nuestro metodo, es decir, ```typeElement``` y ```textValue```, ya que el tercero ```idParentElement``` no lo necesitaremos porque nuestro nodo no tendra un nodo padre mas que ```<body>```. Al no mencionarle a nuestro metodo el id del nodo que sera su padre, éste nuevo nodo se creara dentro del ```<body>``` luego del ultimo nodo existente.
+
+	```javascript
+	//Aqui solo recibirá dos parametros.
+	domjs.createNode("div", "");
+
+	```
+	**_html_**
+
+	```html
+	<div id="nodoPadre">
+		
+		<!--
+		Aqui se crearia nuestro nodo con el metodo _createNode("div", "", "nodoPadre")
+		-->
+
+	</div>
+	```
+	**Asi quedaria nuestro codigo ```html```**
+
+	```html
+	<div id="nodoPadre">
+		
+		<!--
+		Este es le <div> creado.
+		-->
+		
+		<div></div>
+
+	</div>
+	```
+
 
 2. **removeNode(argumentos)**
 
