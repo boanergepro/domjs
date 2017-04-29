@@ -21,7 +21,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 ### El Objeto ```domjs``` ofrece una serie de metodos para manipular el DOM.
 
-1. **_createNode(argumentos)**
+1. **createNode(argumentos)**
 	
 	Este metodo sirve para crear un nodo en nuestro arbol DOM. Dicho metodo recibe tres parametros.
 
@@ -40,7 +40,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	**_Javascript_**
 
 	```javascript
-	domjs._createNode("div", "", "nodoPadre");
+	domjs.createNode("div", "", "nodoPadre");
 
 	```
 	**_html_**
@@ -68,7 +68,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	</div>
 	```
 
-2. **_removeNode(argumentos)**
+2. **removeNode(argumentos)**
 
 	Este metodo sirve para eliminar un nodo del DOM. Dicho metodo solo recive un parametro, el cual debe ser de tipo ```string``` y corresponder con el atributo ```id``` del nodo que queremos eliminar.
 
@@ -90,7 +90,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	**_Javascript_**
 
 	```javascript
-	domjs._removeNode("nodoHijo");
+	domjs.removeNode("nodoHijo");
 
 	```
 
@@ -105,7 +105,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	</div>
 	```
-3. **_searchClass(argumentos)**
+3. **searchClass(argumentos)**
 
 	Este metodo sirve para verificar si un nodo del DOM posee o no una clase.
 	Recibe dos parametros.
@@ -120,7 +120,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```javascript
 
-	domjs._searchClass("contenedor", "style");
+	domjs.searchClass("contenedor", "style");
 
 	```
 	**_html_**
@@ -135,7 +135,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	</div>
 	```
 
-4. **_seeAttributeNode(argumentos)**
+4. **seeAttributeNode(argumentos)**
 
 	Este metodo sirve para verificar un atributo de un nodo. Recibe dos parametros.
 
@@ -149,7 +149,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```javascript
 
-	domjs._seeAttributeNode("contenedor", "class");
+	domjs.seeAttributeNode("contenedor", "class");
 
 	```
 
@@ -165,7 +165,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	</div>
 	```
 
-5. **_addAttributeNode(argumentos)**
+5. **addAttributeNode(argumentos)**
 
 	Este metodo sirve para agregar un atributo a un nodo del DOM. Este recibe tres parametros.
 
@@ -181,7 +181,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```javascript
 
-	domjs._addAttributeNode("contenedor", "class", "style");
+	domjs.addAttributeNode("contenedor", "class", "style");
 
 	```
 
@@ -206,7 +206,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	</div>
 	```
 
-6. **_removeAttributeNode(argumentos)**
+6. **removeAttributeNode(argumentos)**
 	
 	Este metodo sirve para remover un atributo de algun nodo del DOM. Recibe dos parametros.
 
@@ -220,7 +220,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```javascript
 
-	domjs._removeAttributeNode("contenedor", "class");
+	domjs.removeAttributeNode("contenedor", "class");
 
 	```
 
