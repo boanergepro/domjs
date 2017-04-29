@@ -2,7 +2,7 @@ const domjs = (function () {
 	
 	//Metodo crear nodo
 
-	function _createNode (typeElement, textValue, idParentElement) {
+	function createNode (typeElement, textValue, idParentElement) {
 	
 		if(typeElement && textValue && idParentElement == undefined){
 			alert('Algún parametro no ha sido proporcionado a la funcion _createNode.');
@@ -22,7 +22,7 @@ const domjs = (function () {
 
 	//Metodo eliminar nodo
 
-	function _removeNode (idElement){
+	function removeNode (idElement){
 
 		if(idElement == undefined){
 			alert('El parametro idElement no ha sido proporcionado al metodo.');
@@ -40,7 +40,7 @@ const domjs = (function () {
 	//Metodos para ver los atributos de un nodo
 
 	//Metodo ver si un nodo tiene una clase o no
-	function _searchClass (idElement, classSearch){
+	function searchClass (idElement, classSearch){
 		
 		if(idElement && classSearch == undefined){
 			alert('Algún parametro no ha sido proporcionado al metodo _searchClass.');
@@ -63,7 +63,7 @@ const domjs = (function () {
 
 	//Metodo para ver el valor de algun atributo del nodo.
 
-	function _seeAttributeNode (idElement, attributeSee){
+	function seeAttributeNode (idElement, attributeSee){
 
 		if(idElement && attributeSee == undefined){
 			alert('Algún parametro no ha sido proporcionado al metodo _seeAttributeNode.');
@@ -87,7 +87,7 @@ const domjs = (function () {
 
 	//Metodo agregar atributos a un nodo.
 
-	function _addAttributeNode (idElement, attribute, valueAttribute){
+	function addAttributeNode (idElement, attribute, valueAttribute){
 
 		if (idElement && attribute && valueAttribute == undefined) {
 			alert('Algún parametro no ha sido proporcionado al metodo _addAttributeNode.');
@@ -106,7 +106,7 @@ const domjs = (function () {
 
 	//Metodo eliminar atributos de un nodo.
 
-	function _removeAttributeNode (idElement, attribute){
+	function removeAttributeNode (idElement, attribute){
 
 		if (idElement && attribute == undefined) {
 			alert('Algún parametro no ha sido proporcionado al metodo _removeAttributeNode.');
@@ -124,12 +124,12 @@ const domjs = (function () {
 	//API Publica
 	return {
 
-		createNode : _createNode,
-		removeNode : _removeNode,
-		searchClass : _searchClass,
-		seeAttributeNode : _seeAttributeNode,
-		addAttributeNode : _addAttributeNode,
-		removeAttributeNode : _removeAttributeNode
+		createNode,
+		removeNode,
+		searchClass,
+		seeAttributeNode,
+		addAttributeNode,
+		removeAttributeNode
 
 	}
 }())
