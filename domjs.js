@@ -1,14 +1,8 @@
-/*
-					°_°_°_°_°_°_°_°_°_°_°_°_°
-					||||||||||DOMJS||||||||||
-					_°_°_°_°_°_°_°_°_°_°_°_°_
-*/
-
-const domjs = {
+const domjs = (function () {
 	
 	//Metodo crear nodo
 
-	_createNode : function(typeElement, textValue, idParentElement) {
+	function _createNode (typeElement, textValue, idParentElement) {
 	
 		if(typeElement && textValue && idParentElement == undefined){
 			alert('Algún parametro no ha sido proporcionado a la funcion _createNode.');
@@ -23,11 +17,12 @@ const domjs = {
 			element.appendChild(content);
 			parent.appendChild(element);
 		}
-	},
+
+	}
 
 	//Metodo eliminar nodo
 
-	_removeNode : function(idElement){
+	function _removeNode (idElement){
 
 		if(idElement == undefined){
 			alert('El parametro idElement no ha sido proporcionado al metodo.');
@@ -39,12 +34,13 @@ const domjs = {
 			let element = document.getElementById(idElement);
 			element.parentNode.removeChild(element);
 		}
-	},
+
+	}
 
 	//Metodos para ver los atributos de un nodo
 
 	//Metodo ver si un nodo tiene una clase o no
-	_searchClass : function(idElement, classSearch){
+	function _searchClass (idElement, classSearch){
 		
 		if(idElement && classSearch == undefined){
 			alert('Algún parametro no ha sido proporcionado al metodo _searchClass.');
@@ -63,11 +59,11 @@ const domjs = {
 				alert(`El nodo no tiene una clase llamada = ${classSearch}`);
 			}
 		}
-	},
+	}
 
 	//Metodo para ver el valor de algun atributo del nodo.
 
-	_seeAttributeNode: function(idElement, attributeSee){
+	function _seeAttributeNode (idElement, attributeSee){
 
 		if(idElement && attributeSee == undefined){
 			alert('Algún parametro no ha sido proporcionado al metodo _seeAttributeNode.');
@@ -87,11 +83,11 @@ const domjs = {
 				alert(`El nodo si tiene un atributo '${attributeSee}' y su valor es  '${attribute}'`);
 			}
 		}
-	},
+	}
 
 	//Metodo agregar atributos a un nodo.
 
-	_addAttributeNode : function(idElement, attribute, valueAttribute){
+	function _addAttributeNode (idElement, attribute, valueAttribute){
 
 		if (idElement && attribute && valueAttribute == undefined) {
 			alert('Algún parametro no ha sido proporcionado al metodo _addAttributeNode.');
@@ -106,11 +102,11 @@ const domjs = {
 			alert(`El atributo ${attribute} con el valor ${valueAttribute} fue añadido al nodo.`);
 
 		}
-	},
+	}
 
 	//Metodo eliminar atributos de un nodo.
 
-	_removeAttributeNode : function(idElement, attribute){
+	function _removeAttributeNode (idElement, attribute){
 
 		if (idElement && attribute == undefined) {
 			alert('Algún parametro no ha sido proporcionado al metodo _removeAttributeNode.');
@@ -124,4 +120,16 @@ const domjs = {
 			alert(`El atributo ${attribute} fue eliminado del nodo del DOM.`);
 		}
 	}
-}
+
+	//API Publica
+	return {
+
+		createNode : _createNode,
+		removeNode : _removeNode,
+		searchClass : _searchClass,
+		seeAttributeNode : _seeAttributeNode,
+		addAttributeNode : _addAttributeNode,
+		removeAttributeNode : _removeAttributeNode
+
+	}
+}())
