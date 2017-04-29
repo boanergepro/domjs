@@ -75,6 +75,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	Para crear un nodo directamente dentro del nodo ```<body>``` solo es necesario que le pasemos los dos primeros parametros a nuestro metodo, es decir, ```typeElement``` y ```textValue```, ya que el tercero ```idParentElement``` no lo necesitaremos porque nuestro nodo no tendra un nodo padre mas que ```<body>```. Al no mencionarle a nuestro metodo el id del nodo que sera su padre, éste nuevo nodo se creara dentro del ```<body>``` luego del ultimo nodo existente.
 
 	```javascript
+
 	//Aqui solo recibirá dos parametros.
 	domjs.createNode("div", "");
 
@@ -82,26 +83,34 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	**_html_**
 
 	```html
-	<div id="nodoPadre">
+	<body>
+
+		<div>
+
+			<h1>DOMJS</h1>
+
+		</div>
 		
 		<!--
-		Aqui se crearia nuestro nodo con el metodo _createNode("div", "", "nodoPadre")
+		Aqui se crearia nuestro nodo con el metodo createNode("div", "")
 		-->
 
-	</div>
+	</body>
 	```
 	**Asi quedaria nuestro codigo ```html```**
 
 	```html
-	<div id="nodoPadre">
-		
-		<!--
-		Este es le <div> creado.
-		-->
-		
+	<body>
+
+		<div>
+
+			<h1>DOMJS</h1>
+
+		</div>
+		<!-- Este es le <div> creado. -->
 		<div></div>
 
-	</div>
+	</body>
 	```
 
 
