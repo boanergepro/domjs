@@ -4,8 +4,15 @@ const domjs = (function () {
 
 	function createNode (typeElement, textValue, idParentElement) {
 	
-		if(typeElement && textValue && idParentElement == undefined){
+		if(typeElement && textValue == undefined){
 			alert('Algún parametro no ha sido proporcionado a la funcion _createNode.');
+		}
+		else if(idParentElement == undefined && typeof(typeElement, textValue) == 'string'){
+			let element = document.createElement(typeElement);
+			let content = document.createTextNode(textValue);
+			let parent = document.body;
+			element.appendChild(content);
+			parent.appendChild(element);
 		}
 		else if(document.getElementById(idParentElement) == null){
 			alert(`No existe ningun elemento en el DOM con el id = ${idParentElement}`);
