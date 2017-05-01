@@ -11,7 +11,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 1. **Ejemplo**
 
-	Se debe usar ```domjs``` para usar el objeto, seguido se debe colocar un ```.``` y el nombre del metodo que se desea usar con sus argumentos.
+	Se debe usar la palabra ```domjs``` para usar la libreria, seguido se debe colocar un ```.``` y el nombre del metodo que se desea usar con sus argumentos.
 
 **_Javascript_**
 
@@ -19,7 +19,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	domjs.nombreMetodo(argumentos)
 ```
 
-### El Objeto ```domjs``` ofrece una serie de metodos para manipular el DOM.
+### La libreria ```domjs``` ofrece una serie de metodos para manipular el DOM(Document Objet Model).
 
 1. **createNode(argumentos)**
 	
