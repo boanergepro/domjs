@@ -23,7 +23,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 1. **createNode(argumentos)**
 	
-	Este metodo sirve para crear un nodo en nuestro arbol DOM. Cabe mencionar que este permite ser usado de dos formas, una para crear un nodo hijo de otro, como por ejemplo un ```<li>``` dentro de un ```<ul>```, y la otra forma es para crear el nodo directamente detro del body. Dicho metodo puede recibir los siguientes parametros.
+	Esta función sirve para crear un nodo en nuestro arbol DOM. Cabe mencionar que esta permite ser usada de dos formas, una para crear un nodo hijo de otro, como por ejemplo un ```<li>``` dentro de un ```<ul>```, y la otra forma es para crear el nodo directamente detro del body. Dicho metodo puede recibir los siguientes parametros.
 
 	1.1 ```typeElement``` : Este debe ser de tipo ```string``` y debe corresponder al nombre de la etiqueta del nodo que queremos crear.
 	
@@ -72,7 +72,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	**Ejemplo de la creación de un nodo hijo de el nodo ```<body>``` directamente.**
 	
-	Para crear un nodo directamente dentro del nodo ```<body>``` solo es necesario que le pasemos los dos primeros parametros a nuestro metodo, es decir, ```typeElement``` y ```textValue```, ya que el tercero ```idParentElement``` no lo necesitaremos porque nuestro nodo no tendra un nodo padre mas que ```<body>```. Al no mencionarle a nuestro metodo el id del nodo que sera su padre, éste nuevo nodo se creara dentro del ```<body>``` luego del ultimo nodo existente.
+	Para crear un nodo directamente dentro del nodo ```<body>``` solo es necesario que le pasemos los dos primeros parametros a nuestra función, es decir, ```typeElement``` y ```textValue```, ya que el tercero ```idParentElement``` no lo necesitaremos porque nuestro nodo no tendra un nodo padre mas que ```<body>```. Al no mencionarle a nuestra función el id del nodo que sera su padre, éste nuevo nodo se creara dentro del ```<body>``` luego del ultimo nodo existente.
 
 	```javascript
 
@@ -92,7 +92,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 		</div>
 		
 		<!--
-		Aqui se crearia nuestro nodo con el metodo createNode("div", "")
+		Aqui se crearia nuestro nodo con la función createNode("div", "")
 		-->
 
 	</body>
@@ -116,7 +116,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 2. **removeNode(argumentos)**
 
-	Este metodo sirve para eliminar un nodo del DOM. Dicho metodo solo recive un parametro, el cual debe ser de tipo ```string``` y corresponder con el atributo ```id``` del nodo que queremos eliminar.
+	Esta función sirve para eliminar un nodo del DOM. Dicha función solo recive un parametro, el cual debe ser de tipo ```string``` y corresponder con el atributo ```id``` del nodo que queremos eliminar.
 
 	**Ejemplo**
 
@@ -153,7 +153,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	```
 3. **searchClass(argumentos)**
 
-	Este metodo sirve para verificar si un nodo del DOM posee o no una clase.
+	Esta función sirve para verificar si un nodo del DOM posee o no una clase.
 	Recibe dos parametros.
 
 	3.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo del que queremos verificar la clase.
@@ -175,7 +175,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	<div id="contenedor" class="style color">
 		
 		<!--
-		Ya que el div si tiene una clase llamada 'style' entonces el metodo lo notificara con un ```alert()```.
+		Ya que el div si tiene una clase llamada 'style' entonces la función lo notificara con un ```alert()```.
 		-->
 
 	</div>
@@ -183,7 +183,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 4. **seeAttributeNode(argumentos)**
 
-	Este metodo sirve para verificar un atributo de un nodo. Recibe dos parametros.
+	Esta función sirve para verificar un atributo de un nodo. Recibe dos parametros.
 
 	4.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo del que queremos verificar el atributo.
 
@@ -213,7 +213,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 5. **addAttributeNode(argumentos)**
 
-	Este metodo sirve para agregar un atributo a un nodo del DOM. Este recibe tres parametros.
+	Esta función sirve para agregar un atributo a un nodo del DOM. Este recibe tres parametros.
 
 	5.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo al que queremos agregar el atributo.
 
@@ -254,7 +254,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 6. **removeAttributeNode(argumentos)**
 	
-	Este metodo sirve para remover un atributo de algun nodo del DOM. Recibe dos parametros.
+	Esta función sirve para remover un atributo de algun nodo del DOM. Recibe dos parametros.
 
 	6.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo al que le queremos remover el atributo.
 
