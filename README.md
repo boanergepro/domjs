@@ -31,9 +31,9 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	1.2 ```textValue``` : Este debe ser de tipo ```string``` y debe corresponder al contenido que queremos que tenga nuestro nodo.
 	
-	**Ejemplo** Si le pasamos un ```string``` vacio ```""``` el elemento se creara in ningún texto.
+	**Ejemplo** Si le pasamos un ```string``` vacio ```""``` el elemento se creara sin ningún texto.
 	
-	1.3 ```idParentElement``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del padre del nodo que queremos eliminar.  
+	1.3 ```idParentElement``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del nodo padre del nuevo, en caso de que queramos crear un nodo hijo de ``` <body>``` no debemos psarle este parametro a nuestra función.
 	
 	**Ejemplo de la creación de un nodo hijo de otro.**
 
@@ -116,7 +116,9 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 2. **removeNode(argumentos)**
 
-	Esta función sirve para eliminar un nodo del DOM. Dicha función solo recive un parametro, el cual debe ser de tipo ```string``` y corresponder con el atributo ```id``` del nodo que queremos eliminar.
+	Esta función sirve para eliminar un nodo del DOM cualquiera se su ubicación dentro de nuestro arbol. Dicha función solo recive un parametro, el cual debe ser de tipo ```string```.
+
+	2.1 ```ìdElement``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del padre del nodo que queremos eliminar.
 
 	**Ejemplo**
 
@@ -154,7 +156,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 3. **searchClass(argumentos)**
 
 	Esta función sirve para verificar si un nodo del DOM posee o no una clase.
-	Recibe dos parametros.
+	Recibe dos parametros de tipo ```string```.
 
 	3.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo del que queremos verificar la clase.
 
