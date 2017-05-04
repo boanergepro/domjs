@@ -3,67 +3,77 @@ const domjs = (function () {
 	//Metodo crear nodo
 
 	function createNode (typeElement, textValue, idParentElement) {
-	
-		if(typeElement && textValue == undefined){
-			alert('Algún parametro no ha sido proporcionado a la funcion _createNode.');
+
+		if (typeElement == undefined && textValue == undefined && idParentElement == undefined){
+			console.log('creteNode dice: sin parametros.');
+			return false
 		}
-		else if(idParentElement == undefined && typeof(typeElement, textValue) == 'string'){
+		else if (idParentElement == undefined && typeof(typeElement, textValue) == 'string'){
 			let element = document.createElement(typeElement);
 			let content = document.createTextNode(textValue);
 			let parent = document.body;
 			element.appendChild(content);
 			parent.appendChild(element);
+			return true
 		}
-		else if(document.getElementById(idParentElement) == null){
-			alert(`No existe ningun elemento en el DOM con el id = ${idParentElement}`);
+		else if (document.getElementById(idParentElement) == null){
+			console.log('creteNode dice: parametro id no existe.'); 
+			return false
 		}
-		else if (typeof(typeElement , textValue, idParentElement) == "string"){
+		else if (typeof(typeElement , textValue, idParentElement) == 'string'){
 			let element = document.createElement(typeElement);
 			let content = document.createTextNode(textValue);
 			let parent = document.getElementById(idParentElement);
 			element.appendChild(content);
 			parent.appendChild(element);
+			return true
 		}
-
 	}
 
 	//Metodo eliminar nodo
 
 	function removeNode (idElement){
 
-		if(idElement == undefined){
-			alert('El parametro idElement no ha sido proporcionado al metodo.');
+		if (idElement == undefined){
+			console.log('removeNode dice: sin parametro,');
+			return false
 		}
-		else if(document.getElementById(idElement) == null){
-			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
+		else if (document.getElementById(idElement) == null){
+			console.log('removeNode dice: parametro id no existe.');
+			return false
 		}
 		else if (typeof(idElement) == 'string'){
 			let element = document.getElementById(idElement);
 			element.parentNode.removeChild(element);
+			return true
 		}
-
 	}
 
-	//Metodos para ver los atributos de un nodo
-
-	//Metodo ver si un nodo tiene una clase o no
+	//Metodo para ver si un nodo tiene una clase o no.
+	
 	function searchClass (idElement, classSearch){
-		
-		if(idElement && classSearch == undefined){
-			alert('Algún parametro no ha sido proporcionado al metodo _searchClass.');
+
+		if (idElement == undefined && classSearch == undefined){
+			console.log('searchClass dice: sin parametros');
+			return false
 		}
-		else if(document.getElementById(idElement) == null){
-			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
+		else if (idElement == undefined || classSearch == undefined){
+			console.log('searchClass dice: faltan parametros.');
+			return false
 		}
-		else if(typeof(idElement, classSearch) == 'string'){
+		if (document.getElementById(idElement) == null){
+			console.log('searchClass dice: parametro id no existe.');
+			return false
+		}
+		else if (typeof(idElement, classSearch) == 'string'){
 			let element = document.getElementById(idElement); 
 			let exists = element.classList.contains(classSearch);
 
-			if(exists == true){
-				alert(`El nodo si tiene una clase llamada = '${classSearch}'`);
+			if (exists == true){
+				return true
 			}
-			else{
-				alert(`El nodo no tiene una clase llamada = ${classSearch}`);
+			else {
+				return false
 			}
 		}
 	}
@@ -72,21 +82,21 @@ const domjs = (function () {
 
 	function seeAttributeNode (idElement, attributeSee){
 
-		if(idElement && attributeSee == undefined){
+		if (idElement && attributeSee == undefined){
 			alert('Algún parametro no ha sido proporcionado al metodo _seeAttributeNode.');
 		}
-		else if(document.getElementById(idElement) == null){
+		else if (document.getElementById(idElement) == null){
 			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
 		}
-		else if(typeof(idElement,attributeSee) == 'string'){
+		else if (typeof(idElement,attributeSee) == 'string'){
 			let element = document.getElementById(idElement);
 
 			let attribute = element.getAttribute(attributeSee);
 
-			if(attribute == null){
+			if (attribute == null){
 				alert(`El nodo no tiene un atributo '${attributeSee}'`)
 			}
-			else{
+			else {
 				alert(`El nodo si tiene un atributo '${attributeSee}' y su valor es  '${attribute}'`);
 			}
 		}
@@ -99,7 +109,7 @@ const domjs = (function () {
 		if (idElement && attribute && valueAttribute == undefined) {
 			alert('Algún parametro no ha sido proporcionado al metodo _addAttributeNode.');
 		}
-		else if(document.getElementById(idElement) == null){
+		else if (document.getElementById(idElement) == null){
 			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
 		}
 		else if (typeof(idElement, attribute, valueAttribute) == 'string') {
@@ -118,7 +128,7 @@ const domjs = (function () {
 		if (idElement && attribute == undefined) {
 			alert('Algún parametro no ha sido proporcionado al metodo _removeAttributeNode.');
 		}
-		else if(document.getElementById(idElement) == null){
+		else if (document.getElementById(idElement) == null){
 			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
 		}
 		else if (typeof(idElement, attribute) == 'string') {
