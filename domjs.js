@@ -45,6 +45,7 @@ const domjs = (function () {
 		else if (typeof(idElement) == 'string'){
 			let element = document.getElementById(idElement);
 			element.parentNode.removeChild(element);
+			console.log()
 			return true
 		}
 	}
@@ -82,22 +83,27 @@ const domjs = (function () {
 
 	function seeAttributeNode (idElement, attributeSee){
 
-		if (idElement && attributeSee == undefined){
-			alert('Algún parametro no ha sido proporcionado al metodo _seeAttributeNode.');
+		if (idElement == undefined && attributeSee == undefined){
+			console.log('seeAttributeNode dice: sin parametros');
+			return false
+		}
+		else if (idElement == undefined || attributeSee == undefined){
+			console.log('seeAttributeNode dice: faltan parametros.');
+			return false
 		}
 		else if (document.getElementById(idElement) == null){
-			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
+			console.log('seeAttributeNode dice: parametro id no existe.');
+			return false
 		}
 		else if (typeof(idElement,attributeSee) == 'string'){
 			let element = document.getElementById(idElement);
-
 			let attribute = element.getAttribute(attributeSee);
 
 			if (attribute == null){
-				alert(`El nodo no tiene un atributo '${attributeSee}'`)
+				return false
 			}
 			else {
-				alert(`El nodo si tiene un atributo '${attributeSee}' y su valor es  '${attribute}'`);
+				return attribute
 			}
 		}
 	}
@@ -106,17 +112,19 @@ const domjs = (function () {
 
 	function addAttributeNode (idElement, attribute, valueAttribute){
 
-		if (idElement && attribute && valueAttribute == undefined) {
-			alert('Algún parametro no ha sido proporcionado al metodo _addAttributeNode.');
+		if (idElement == undefined && attribute == undefined && valueAttribute == undefined) {
+			console.log('addAttributeNode dice: sin parametros');
+			return false
 		}
 		else if (document.getElementById(idElement) == null){
-			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
+			console.log('addAttributeNode dice: parametro id no existe.');
+			return false
 		}
 		else if (typeof(idElement, attribute, valueAttribute) == 'string') {
 
 			let element = document.getElementById(idElement);
 			element.setAttribute(attribute, valueAttribute);
-			alert(`El atributo ${attribute} con el valor ${valueAttribute} fue añadido al nodo.`);
+			return true
 
 		}
 	}
@@ -125,16 +133,22 @@ const domjs = (function () {
 
 	function removeAttributeNode (idElement, attribute){
 
-		if (idElement && attribute == undefined) {
-			alert('Algún parametro no ha sido proporcionado al metodo _removeAttributeNode.');
+		if (idElement == undefined && attribute == undefined) {
+			console.log('removeAttributeNode dice: sin parametros');
+			return false
+		}
+		else if (idElement == undefined || attribute == undefined){
+			console.log('seeAttributeNode dice: faltan parametros.');
+			return false
 		}
 		else if (document.getElementById(idElement) == null){
-			alert(`No existe ningun elemento en el DOM con el id = ${idElement}`);
+			console.log('removeAttributeNode dice: parametro id no existe.');
+			return false
 		}
 		else if (typeof(idElement, attribute) == 'string') {
 			let element = document.getElementById(idElement);
 			element.removeAttribute(attribute);
-			alert(`El atributo ${attribute} fue eliminado del nodo del DOM.`);
+			return true
 		}
 	}
 
