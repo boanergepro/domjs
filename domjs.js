@@ -5,8 +5,14 @@ const domjs = (function () {
 	function createNode (typeElement, textValue, idParentElement) {
 
 		if (typeElement == undefined && textValue == undefined && idParentElement == undefined){
-			console.log('creteNode dice: sin parametros.');
+			console.error('createNode dice: sin parametros.');
 			return false
+		}
+		else if (textValue == undefined && idParentElement == undefined){
+			let element = document.createElement(typeElement);
+			let parent = document.body;
+			parent.appendChild(element);
+			return true
 		}
 		else if (idParentElement == undefined && typeof(typeElement, textValue) == 'string'){
 			let element = document.createElement(typeElement);
@@ -17,7 +23,7 @@ const domjs = (function () {
 			return true
 		}
 		else if (document.getElementById(idParentElement) == null){
-			console.log('creteNode dice: parametro id no existe.'); 
+			console.error('creteNode dice: parametro id no existe.'); 
 			return false
 		}
 		else if (typeof(typeElement , textValue, idParentElement) == 'string'){
@@ -35,11 +41,11 @@ const domjs = (function () {
 	function removeNode (idElement){
 
 		if (idElement == undefined){
-			console.log('removeNode dice: sin parametro,');
+			console.error('removeNode dice: sin parametro,');
 			return false
 		}
 		else if (document.getElementById(idElement) == null){
-			console.log('removeNode dice: parametro id no existe.');
+			console.error('removeNode dice: parametro id no existe.');
 			return false
 		}
 		else if (typeof(idElement) == 'string'){
@@ -55,15 +61,15 @@ const domjs = (function () {
 	function searchClass (idElement, classSearch){
 
 		if (idElement == undefined && classSearch == undefined){
-			console.log('searchClass dice: sin parametros');
+			console.error('searchClass dice: sin parametros');
 			return false
 		}
 		else if (idElement == undefined || classSearch == undefined){
-			console.log('searchClass dice: faltan parametros.');
+			console.error('searchClass dice: faltan parametros.');
 			return false
 		}
 		if (document.getElementById(idElement) == null){
-			console.log('searchClass dice: parametro id no existe.');
+			console.error('searchClass dice: parametro id no existe.');
 			return false
 		}
 		else if (typeof(idElement, classSearch) == 'string'){
@@ -84,15 +90,15 @@ const domjs = (function () {
 	function seeAttributeNode (idElement, attributeSee){
 
 		if (idElement == undefined && attributeSee == undefined){
-			console.log('seeAttributeNode dice: sin parametros');
+			console.error('seeAttributeNode dice: sin parametros');
 			return false
 		}
 		else if (idElement == undefined || attributeSee == undefined){
-			console.log('seeAttributeNode dice: faltan parametros.');
+			console.error('seeAttributeNode dice: faltan parametros.');
 			return false
 		}
 		else if (document.getElementById(idElement) == null){
-			console.log('seeAttributeNode dice: parametro id no existe.');
+			console.error('seeAttributeNode dice: parametro id no existe.');
 			return false
 		}
 		else if (typeof(idElement,attributeSee) == 'string'){
@@ -113,11 +119,11 @@ const domjs = (function () {
 	function addAttributeNode (idElement, attribute, valueAttribute){
 
 		if (idElement == undefined && attribute == undefined && valueAttribute == undefined) {
-			console.log('addAttributeNode dice: sin parametros');
+			console.error('addAttributeNode dice: sin parametros');
 			return false
 		}
 		else if (document.getElementById(idElement) == null){
-			console.log('addAttributeNode dice: parametro id no existe.');
+			console.error('addAttributeNode dice: parametro id no existe.');
 			return false
 		}
 		else if (typeof(idElement, attribute, valueAttribute) == 'string') {
@@ -134,15 +140,15 @@ const domjs = (function () {
 	function removeAttributeNode (idElement, attribute){
 
 		if (idElement == undefined && attribute == undefined) {
-			console.log('removeAttributeNode dice: sin parametros');
+			console.error('removeAttributeNode dice: sin parametros');
 			return false
 		}
 		else if (idElement == undefined || attribute == undefined){
-			console.log('seeAttributeNode dice: faltan parametros.');
+			console.error('seeAttributeNode dice: faltan parametros.');
 			return false
 		}
 		else if (document.getElementById(idElement) == null){
-			console.log('removeAttributeNode dice: parametro id no existe.');
+			console.error('removeAttributeNode dice: parametro id no existe.');
 			return false
 		}
 		else if (typeof(idElement, attribute) == 'string') {
@@ -164,3 +170,28 @@ const domjs = (function () {
 
 	}
 }())
+
+/*
+
+- usar querySelector("") en la funcion searchClass()
+
+- Agregar la posibilidad de agregarle atributos al elemento creado con createNode()
+- Usar el objeto arguments en todas las funciones.
+- Refactoriar el codigo de la funcion createNode()
+  para que los atributos se pasen por medio de un objeto. 
+
+
+
+
+  function crear (tipo,atributos){
+	var args = atributos;
+	var element = document.createElement(tipo);
+	for (atr in args){
+		element.setAttribute(atr,args[atr]);
+	}
+	return element
+ }
+ //Llamada
+ crear('div',{class: 'btn', name : 'content')
+ Se le debe pasar coo paraetro un objeto con los atributos que se quieren añadir.
+*/
