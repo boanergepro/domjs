@@ -1,5 +1,16 @@
 const domjs = (function () {
 	
+	const msj = {
+		
+		createNode : "createNode:",
+		removeNode : "removeNode:",
+		searchClass : "searchClass:",
+		seeAttributeNode: "seeAttributeNode:",
+		addAttributeNode: "addAttributeNode:",
+		removeAttributeNode: "removeAttributeNode:"
+
+	}
+	
 	//Metodo crear nodo
 
 	function createNode (data){
@@ -44,7 +55,7 @@ const domjs = (function () {
 						}
 						element.appendChild(textContent);
 						parent.appendChild(element);
-						console.log("Se creo el nodo hijo de otro nodo y con atributos");
+						console.log(`${msj.createNode} Se creo el nodo hijo de otro nodo y con atributos`);
 						return true;
 					}
 
@@ -56,7 +67,7 @@ const domjs = (function () {
 
 						element.appendChild(textContent);
 						parent.appendChild(element);
-						console.log(`El nodo fue creado hijo del nodo con el id ${ idParent }`)
+						console.log(`${msj.createNode} El nodo fue creado hijo del nodo con el id ${ idParent }`)
 						return true;
 					}
 
@@ -69,7 +80,7 @@ const domjs = (function () {
 							element.setAttribute(key,attributes[key]);
 						}
 						parent.appendChild(element);
-						console.log(`El nodo fue creado hijo del nodo con el id ${ idParent } y con atributos`);
+						console.log(`${msj.createNode} El nodo fue creado hijo del nodo con el id ${ idParent } y con atributos`);
 						return true;
 					}
 
@@ -93,7 +104,7 @@ const domjs = (function () {
 						let parent = document.getElementById(idParent);
 
 						parent.appendChild(element);
-						console.log(`El nodo fue creado hijo del nodo con el id ${idParent}`)
+						console.log(`${msj.createNode} El nodo fue creado hijo del nodo con el id ${idParent}`)
 						return true;
 					}
 
@@ -105,7 +116,7 @@ const domjs = (function () {
 						element.appendChild(nodoText);
 						let parent = document.body;
 						parent.appendChild(element);
-						console.log("El nodo fue creado hijo de body");
+						console.log(`${msj.createNode} El nodo fue creado hijo de body`);
 						console.log(`Con el texto ${textContent}`);
 						return true;
 
@@ -120,7 +131,7 @@ const domjs = (function () {
 						}
 						let parent = document.body;
 						parent.appendChild(element)
-						console.log("El nodo fue creado hijo de body, si tiene atributosS.");
+						console.log(`${msj.createNode} El nodo fue creado hijo de body, si tiene atributos.`);
 						return true;
 
 					}
@@ -129,43 +140,43 @@ const domjs = (function () {
 						let element = document.createElement(type);
 						let parent = document.body;
 						parent.appendChild(element);
-						console.log("El nodo fue creado hijo de body.");
+						console.log(`${msj.createNode} El nodo fue creado hijo de body.`);
 						return true;
 						
 					}
 				} 
 				else{
-					console.error("El tipo de elemento es incorrecto.");
+					console.error(`${msj.createNode} El tipo de elemento es incorrecto.`);
 					return false;
 				}
 			}
 			else{
-				console.error("No ha especificado el tipo de elemento");
+				console.error(`${msj.createNode} No ha especificado el tipo de elemento`);
 					return false;
 			}
 		}
 		else{
-			console.error("No ha especificado ningun parametro");
+			console.error(`${msj.createNode} No ha especificado ningun parametro.`);
 					return false;
 		}
 	}
-	//Metodo eliminar nodo
+	//Metodo eliminar nodo.
 
 	function removeNode (idElement){
 
 		if (idElement == undefined){
-			console.error('removeNode dice: sin parametro,');
-			return false
+			console.error(`${msj.removeNode} No ha especificado ningun parametro`);
+			return false;
 		}
 		else if (document.getElementById(idElement) == null){
-			console.error('removeNode dice: parametro id no existe.');
-			return false
+			console.error(`${msj.removeNode} parametro id no existe.`);
+			return false;
 		}
 		else if (typeof(idElement) == 'string'){
 			let element = document.getElementById(idElement);
 			element.parentNode.removeChild(element);
-			console.log()
-			return true
+			console.log(`${msj.removeNode} Nodo eliminado.`);
+			return true;
 		}
 	}
 
@@ -174,23 +185,23 @@ const domjs = (function () {
 	function searchClass (idElement, classSearch){
 
 		if (idElement == undefined && classSearch == undefined){
-			console.error('searchClass dice: sin parametros');
-			return false
+			console.error(`${msj.searchClass} sin parametros`);
+			return false;
 		}
 		else if (idElement == undefined || classSearch == undefined){
-			console.error('searchClass dice: faltan parametros.');
-			return false
+			console.error(`${msj.searchClass}  faltan parametros.`);
+			return false;
 		}
 		if (document.getElementById(idElement) == null){
-			console.error('searchClass dice: parametro id no existe.');
-			return false
+			console.error(`${msj.searchClass}  parametro id no existe.`);
+			return false;
 		}
 		else if (typeof(idElement, classSearch) == 'string'){
 			let element = document.getElementById(idElement); 
 			let exists = element.classList.contains(classSearch);
 
 			if (exists == true){
-				return true
+				return true;
 			}
 			else {
 				return false
@@ -203,15 +214,15 @@ const domjs = (function () {
 	function seeAttributeNode (idElement, attributeSee){
 
 		if (idElement == undefined && attributeSee == undefined){
-			console.error('seeAttributeNode dice: sin parametros');
+			console.error(`${msj.seeAttributeNode} sin parametros`);
 			return false
 		}
 		else if (idElement == undefined || attributeSee == undefined){
-			console.error('seeAttributeNode dice: faltan parametros.');
+			console.error(`${msj.seeAttributeNode} faltan parametros.`);
 			return false
 		}
 		else if (document.getElementById(idElement) == null){
-			console.error('seeAttributeNode dice: parametro id no existe.');
+			console.error(`${msj.seeAttributeNode} parametro id no existe.`);
 			return false
 		}
 		else if (typeof(idElement,attributeSee) == 'string'){
@@ -229,22 +240,29 @@ const domjs = (function () {
 
 	//Metodo agregar atributos a un nodo.
 
-	function addAttributeNode (idElement, attribute, valueAttribute){
+	function addAttributeNode (idElement, attributes){
 
-		if (idElement == undefined && attribute == undefined && valueAttribute == undefined) {
-			console.error('addAttributeNode dice: sin parametros');
-			return false
+		if (idElement && attributes) {
+			
+			if (document.getElementById(idElement) == null){
+				console.error(`${msj.addAttributeNode} parametro id no existe.`);
+				return false
+			}
+			else if (typeof(idElement) == "string" && typeof(attributes) == "object") {
+
+				let element = document.getElementById(idElement);
+
+				for (key in attributes){
+					element.setAttribute(key,attributes[key]);
+				}
+			}
+			else{
+				console.error(`${msj.addAttributeNode} Algun parametro no fue pasado o es incorrecto.`);
+				return false;
+			}	
 		}
-		else if (document.getElementById(idElement) == null){
-			console.error('addAttributeNode dice: parametro id no existe.');
-			return false
-		}
-		else if (typeof(idElement, attribute, valueAttribute) == 'string') {
-
-			let element = document.getElementById(idElement);
-			element.setAttribute(attribute, valueAttribute);
-			return true
-
+		else{
+			console.error(`${msj.addAttributeNode} Algun parametro no fue pasado o es incorrecto`)
 		}
 	}
 
@@ -253,15 +271,15 @@ const domjs = (function () {
 	function removeAttributeNode (idElement, attribute){
 
 		if (idElement == undefined && attribute == undefined) {
-			console.error('removeAttributeNode dice: sin parametros');
+			console.error(`${msj.removeAttributeNode} sin parametros`);
 			return false
 		}
 		else if (idElement == undefined || attribute == undefined){
-			console.error('seeAttributeNode dice: faltan parametros.');
+			console.error(`${msj.removeAttributeNode} faltan parametros.`);
 			return false
 		}
 		else if (document.getElementById(idElement) == null){
-			console.error('removeAttributeNode dice: parametro id no existe.');
+			console.error(`${msj.removeAttributeNode} parametro id no existe.`);
 			return false
 		}
 		else if (typeof(idElement, attribute) == 'string') {
