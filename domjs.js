@@ -2,40 +2,153 @@ const domjs = (function () {
 	
 	//Metodo crear nodo
 
-	function createNode (typeElement, textValue, idParentElement) {
+	function createNode (data){
+		/*
+		valores del objeto
 
-		if (typeElement == undefined && textValue == undefined && idParentElement == undefined){
-			console.error('createNode dice: sin parametros.');
-			return false
+			typeElement
+			idParent
+			attributes
+			textContent
+		*/
+		if (data) {
+
+			//Saber si el objeto data contiene la propiedad typeElement
+			let exisTypeElement = data.hasOwnProperty("typeElement");
+
+			if (exisTypeElement) {
+
+				let valor = new RegExp("^[a-zA-Z]*$");
+				let isString = valor.test(data.typeElement);
+				let typeElement = data.typeElement;
+
+				if (isString) {
+
+					let type = typeElement.toLowerCase();
+					let exisIdParent = data.hasOwnProperty("idParent");
+					let exisTextContent = data.hasOwnProperty("textContent");
+					let exisAttribute = data.hasOwnProperty("attributes");
+
+					let idParent = data.idParent;
+					let attributes = data.attributes;
+					let text = data.textContent;
+
+					if (exisIdParent && exisTextContent && exisAttribute) {
+
+						let element = document.createElement(type);
+						let parent = document.getElementById(idParent);
+						let textContent = document.createTextNode(text);
+						//Add attributes
+						for (key in attributes){
+							element.setAttribute(key,attributes[key]);
+						}
+						element.appendChild(textContent);
+						parent.appendChild(element);
+						console.log("Se creo el nodo hijo de otro nodo y con atributos");
+						return true;
+					}
+
+					else if (exisIdParent && exisTextContent) {
+
+						let element = document.createElement(type);
+						let textContent = document.createTextNode(text);
+						let parent = document.getElementById(idParent);
+
+						element.appendChild(textContent);
+						parent.appendChild(element);
+						console.log(`El nodo fue creado hijo del nodo con el id ${ idParent }`)
+						return true;
+					}
+
+					else if (exisIdParent && exisAttribute) {
+
+						let element = document.createElement(type);
+						let parent = document.createTextNode(text);
+						//Add attributes
+						for (key in attributes){
+							element.setAttribute(key,attributes[key]);
+						}
+						parent.appendChild(element);
+						console.log(`El nodo fue creado hijo del nodo con el id ${ idParent } y con atributos`);
+						return true;
+					}
+
+					else if (exisTextContent && exisAttribute) {
+						
+						let element = document.createElement(type);
+						let textContent = document.createTextNode(text);
+						let parent = document.body;
+
+						//Add attributes
+						for (key in attributes){
+							element.setAttribute(key,attributes[key]);
+						}
+						element.appendChild(textContent);
+						parent.appendChild(element);
+					}
+
+					else if (exisIdParent){
+
+						let element = document.createElement(type);
+						let parent = document.getElementById(idParent);
+
+						parent.appendChild(element);
+						console.log(`El nodo fue creado hijo del nodo con el id ${idParent}`)
+						return true;
+					}
+
+					else if (exisTextContent){
+
+						let textContent = data.textContent;
+						let element = document.createElement(type);
+						let nodoText = document.createTextNode(textContent);
+						element.appendChild(nodoText);
+						let parent = document.body;
+						parent.appendChild(element);
+						console.log("El nodo fue creado hijo de body");
+						console.log(`Con el texto ${textContent}`);
+						return true;
+
+					}
+					else if (exisAttribute) {
+
+						let attributes = data.attributes;
+
+						let element = document.createElement(type);
+						for (key in attributes){
+							element.setAttribute(key,attributes[key]);
+						}
+						let parent = document.body;
+						parent.appendChild(element)
+						console.log("El nodo fue creado hijo de body, si tiene atributosS.");
+						return true;
+
+					}
+					else{
+
+						let element = document.createElement(type);
+						let parent = document.body;
+						parent.appendChild(element);
+						console.log("El nodo fue creado hijo de body.");
+						return true;
+						
+					}
+				} 
+				else{
+					console.error("El tipo de elemento es incorrecto.");
+					return false;
+				}
+			}
+			else{
+				console.error("No ha especificado el tipo de elemento");
+					return false;
+			}
 		}
-		else if (textValue == undefined && idParentElement == undefined){
-			let element = document.createElement(typeElement);
-			let parent = document.body;
-			parent.appendChild(element);
-			return true
-		}
-		else if (idParentElement == undefined && typeof(typeElement, textValue) == 'string'){
-			let element = document.createElement(typeElement);
-			let content = document.createTextNode(textValue);
-			let parent = document.body;
-			element.appendChild(content);
-			parent.appendChild(element);
-			return true
-		}
-		else if (document.getElementById(idParentElement) == null){
-			console.error('creteNode dice: parametro id no existe.'); 
-			return false
-		}
-		else if (typeof(typeElement , textValue, idParentElement) == 'string'){
-			let element = document.createElement(typeElement);
-			let content = document.createTextNode(textValue);
-			let parent = document.getElementById(idParentElement);
-			element.appendChild(content);
-			parent.appendChild(element);
-			return true
+		else{
+			console.error("No ha especificado ningun parametro");
+					return false;
 		}
 	}
-
 	//Metodo eliminar nodo
 
 	function removeNode (idElement){
@@ -170,28 +283,3 @@ const domjs = (function () {
 
 	}
 }())
-
-/*
-
-- usar querySelector("") en la funcion searchClass()
-
-- Agregar la posibilidad de agregarle atributos al elemento creado con createNode()
-- Usar el objeto arguments en todas las funciones.
-- Refactoriar el codigo de la funcion createNode()
-  para que los atributos se pasen por medio de un objeto. 
-
-
-
-
-  function crear (tipo,atributos){
-	var args = atributos;
-	var element = document.createElement(tipo);
-	for (atr in args){
-		element.setAttribute(atr,args[atr]);
-	}
-	return element
- }
- //Llamada
- crear('div',{class: 'btn', name : 'content')
- Se le debe pasar coo paraetro un objeto con los atributos que se quieren añadir.
-*/
