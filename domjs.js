@@ -2,14 +2,14 @@ const domjs = (function () {
 	
 	const msj = {
 
-        createNode: "createNode:",
-        removeNode: "removeNode:",
-        searchClass: "searchClass:",
-        seeAttributeNode: "seeAttributeNode:",
-        addAttributeNode: "addAttributeNode:",
-        removeAttributeNode: "removeAttributeNode:"
+        	createNode: "createNode:",
+        	removeNode: "removeNode:",
+        	searchClass: "searchClass:",
+        	seeAttributeNode: "seeAttributeNode:",
+        	addAttributeNode: "addAttributeNode:",
+        	removeAttributeNode: "removeAttributeNode:"
 
-    };
+    	};
 
 	//Metodo crear nodo
 
