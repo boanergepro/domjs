@@ -1,6 +1,6 @@
 # DOMJS
 
-Esta es una libreria creada para la manipulación del DOM (Document Objet Model).
+Esta es una libreria creada para la manipulación del DOM (Document Objet Model) mediante el conjunto de funciones nativas de JavaScript.
 
 ### Añadirlo a nuestro documento:
 
