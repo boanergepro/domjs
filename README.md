@@ -65,7 +65,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 		Este es le <div> creado.
 		-->
 		
-		<div></div>
+		<div id="contenedor" class="row"></div>
 
 	</div>
 	```
@@ -204,19 +204,9 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	5.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo al que queremos agregar el atributo.
 
-	5.2 ```attribute``` : Este debe ser de tipo ```string``` y debe tener un nombre valido de un atributo para los nodos.
-
-	5.3 ```valueAttribute``` : Este debe ser de tipo ```string``` y debe corresponder al valor del atributo que queremos agregar al nodo del DOM.
+	5.2 ```attribute``` : Este es un objeto que contendra los atributos que le agregaremos al nodo.
 
 	**Ejemplo**
-
-	**_Javascript_**
-
-	```javascript
-
-	domjs.addAttributeNode("contenedor", "class", "style");
-
-	```
 
 	**_html_**
 
@@ -227,14 +217,23 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	</div>
 	```
 
+	**_Javascript_**
+
+	```javascript
+
+	domjs.addAttributeNode("contenedor", {
+		class: 'style'
+	});
+
+	```
+
+	**_html_**
+
 	**Asi quedaria nuestro codigo ```html```**
 
 	```html
 	<!--Ahora se agrego el atributo class con el valor 'style'-->
 	<div id="contenedor" class="style">
-		
-		<!--Se notificara por un ```alert()``` del atributo y el valor de 
-		dicho atributo que se agrego.-->
 
 	</div>
 	```
