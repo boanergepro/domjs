@@ -29,7 +29,7 @@ const domjs = (function () {
 
 			if (exisTypeElement) {
 
-				let valor = new RegExp("^[a-zA-Z]*$");
+				let valor = new RegExp("^[a-z1-9]*$");
 				let isString = valor.test(data.typeElement);
 				let typeElement = data.typeElement;
 
