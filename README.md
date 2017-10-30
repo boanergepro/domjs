@@ -23,7 +23,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 1. **createNode(argumentos)**
 	
-	Esta función sirve para crear un nodo en nuestro arbol DOM. Cabe mencionar que esta permite ser usada de dos formas, una para crear un nodo hijo de otro, como por ejemplo un ```<li>``` dentro de un ```<ul>```, y la otra forma es para crear el nodo directamente detro del body. Dicho metodo puede recibir los siguientes parametros.
+	Esta función sirve para crear un nodo en nuestro arbol DOM. Cabe mencionar que esta permite ser usada de dos formas, una para crear un nodo hijo de otro, como por ejemplo un ```<li>``` dentro de un ```<ul>```, y la otra forma es para crear el nodo directamente detro del body. Dicho metodo recive un objeto los siguientes valores.
 
 	1.1 ```typeElement``` : Este debe ser de tipo ```string``` y debe corresponder al nombre de la etiqueta del nodo que queremos crear.
 	
@@ -33,7 +33,9 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	
 	**Ejemplo** Si le pasamos un ```string``` vacio ```""``` el elemento se creara sin ningún texto.
 	
-	1.3 ```idParentElement``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del nodo padre del nuevo, en caso de que queramos crear un nodo hijo de ``` <body>``` no debemos psarle este parametro a nuestra función.
+	1.3 ```idParent``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del nodo padre del nuevo, en caso de que queramos crear un nodo hijo de ``` <body>``` no debemos psarle este parametro a nuestra función.
+
+	1.4 ```attributes``` : Recibe un objeto con todos los atributos que queremos asignarle a nuestro nuevo nodo.
 	
 	**Ejemplo de la creación de un nodo hijo de otro.**
 
@@ -42,19 +44,17 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	**_Javascript_**
 
 	```javascript
-	domjs.createNode("div", "", "nodoPadre");
-
+	domjs.createNode({
+		typeElement: 'div',
+		idParent: 'nodoPadre',
+		attributes: {
+			id: 'contenedor',
+			class: 'row'
+		},
+		textValue: ''
+	});
 	```
-	**_html_**
 
-	```html
-	<div id="nodoPadre">
-		
-		<!--
-		Aqui se crearia nuestro nodo con el metodo _createNode("div", "", "nodoPadre")
-		-->
-
-	</div>
 	```
 	**Asi quedaria nuestro codigo ```html```**
 
@@ -77,25 +77,10 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	```javascript
 
 	//Aqui solo recibirá dos parametros.
-	domjs.createNode("div", "");
+	domjs.createNode({
+		typeElement: 'div'
+	});
 
-	```
-	**_html_**
-
-	```html
-	<body>
-
-		<div>
-
-			<h1>DOMJS</h1>
-
-		</div>
-		
-		<!--
-		Aqui se crearia nuestro nodo con la función createNode("div", "")
-		-->
-
-	</body>
 	```
 	**Asi quedaria nuestro codigo ```html```**
 
