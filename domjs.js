@@ -256,6 +256,7 @@ const domjs = (function () {
                 for (key in attributes) {
                     element.setAttribute(key, attributes[key]);
                 }
+                return true
             }
             else {
                 console.error(`${msj.addAttributeNode} Algun parametro no fue pasado o es incorrecto.`);
