@@ -22,25 +22,25 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 ### La libreria ```domjs``` ofrece una serie de metodos para manipular el DOM(Document Objet Model).
 
 1. **createNode(argumentos)**
-	
+
 	Esta función sirve para crear un nodo en nuestro arbol DOM. Cabe mencionar que esta permite ser usada de dos formas, una para crear un nodo hijo de otro, como por ejemplo un ```<li>``` dentro de un ```<ul>```, y la otra forma es para crear el nodo directamente detro del body. Dicho metodo recive un objeto los siguientes valores.
 
 	1.1 ```typeElement``` : Este debe ser de tipo ```string``` y debe corresponder al nombre de la etiqueta del nodo que queremos crear.
-	
+
 	**Ejemplo** ```div``` para crear un nodo con la etiqueta ```<div>```.
 
 	1.2 ```textValue``` : Este debe ser de tipo ```string``` y debe corresponder al contenido que queremos que tenga nuestro nodo.
-	
+
 	**Ejemplo** Si le pasamos un ```string``` vacio ```""``` el elemento se creara sin ningún texto.
-	
+
 	1.3 ```idParent``` : Este debe ser de tipo ```string``` y debe responder al atributo de tipo ```id``` del nodo padre del nuevo, en caso de que queramos crear un nodo hijo de ``` <body>``` no debemos psarle este parametro a nuestra función.
 
 	1.4 ```attributes``` : Recibe un objeto con todos los atributos que queremos asignarle a nuestro nuevo nodo.
-	
+
 	**Ejemplo de la creación de un nodo hijo de otro.**
 
 	Para crear un nodo hijo de otro, como lo seria el caso de crear un elemento ```<div>``` dentro de otro ```<div>``` tendriamos que pasarle los tres parametros al metodo.
-	
+
 	**_Javascript_**
 
 	```javascript
@@ -55,23 +55,23 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	});
 	```
 
-	```
-	**Asi quedaria nuestro codigo ```html```**
+
+	**Asi quedaria nuestro codigo**
 
 	```html
 	<div id="nodoPadre">
-		
+
 		<!--
 		Este es le <div> creado.
 		-->
-		
+
 		<div id="contenedor" class="row"></div>
 
 	</div>
 	```
 
 	**Ejemplo de la creación de un nodo hijo de el nodo ```<body>``` directamente.**
-	
+
 	Para crear un nodo directamente dentro del nodo ```<body>``` solo es necesario que le pasemos los dos primeros parametros a nuestra función, es decir, ```typeElement``` y ```textValue```, ya que el tercero ```idParentElement``` no lo necesitaremos porque nuestro nodo no tendra un nodo padre mas que ```<body>```. Al no mencionarle a nuestra función el id del nodo que sera su padre, éste nuevo nodo se creara dentro del ```<body>``` luego del ultimo nodo existente.
 
 	```javascript
@@ -111,7 +111,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```html
 	<div id="nodoPadre">
-		
+
 		<!--
 			El nodo con el id "nodoHijo" es el que necesitamos eliminar.
 		-->
@@ -131,7 +131,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```html
 	<div id="nodoPadre">
-		
+
 		<!--
 		El <div> ha sido eliminado.
 		-->
@@ -160,7 +160,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```html
 	<div id="contenedor" class="style color">
-		
+
 		<!--
 		Ya que el div si tiene una clase llamada 'style' entonces la función lo notificara con un ```alert()```.
 		-->
@@ -190,7 +190,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```html
 	<div id="contenedor" class="style color">
-		
+
 		<!--
 		Retornara ```"style color"``` ya que el atributo class tiene este valor en el nodo que estamos consultando```alert()```.
 		-->
@@ -212,7 +212,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```html
 	<div id="contenedor">
-		
+
 
 	</div>
 	```
@@ -239,7 +239,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	```
 
 6. **removeAttributeNode(argumentos)**
-	
+
 	Esta función sirve para remover un atributo de algun nodo del DOM. Recibe dos parametros.
 
 	6.1 ```idElement``` : Este debe ser de tipo ```string``` y debe corresponder al atributo de tipo ```id``` del nodo al que le queremos remover el atributo.
@@ -260,7 +260,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 
 	```html
 	<div id="contenedor" class="style">
-		
+
 
 	</div>
 	```
@@ -270,7 +270,7 @@ Esta es una libreria creada para la manipulación del DOM (Document Objet Model)
 	```html
 	<!--Ahora se elimino el atributo class con el valor 'style'-->
 	<div id="contenedor">
-		
+
 		<!--Se notificara por un ```alert()```el atributo que fue removido.-->
 
 	</div>
